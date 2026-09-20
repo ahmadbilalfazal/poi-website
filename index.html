@@ -1,328 +1,95 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proof of Intelligence | The Verified Talent Network</title>
+    <title>Proof of Intelligence | Investor Portal</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-dark: #050505;
             --bg-card: #0a0a0a;
-            --bg-glass: rgba(15, 15, 15, 0.7);
+            --bg-glass: rgba(10, 10, 10, 0.8);
             --border: #1f1f1f;
-            --border-hover: #333;
             --text-main: #f5f5f5;
             --text-muted: #888;
             --accent: #00ff88;
-            --accent-glow: rgba(0, 255, 136, 0.15);
             --gradient: linear-gradient(135deg, #00ff88 0%, #00aaff 100%);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; }
         
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Typography & Utilities */
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
-        .text-gradient {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Glass Navbar */
         nav {
-            position: fixed;
-            top: 0; width: 100%;
-            background: var(--bg-glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
+            position: fixed; top: 0; width: 100%; background: var(--bg-glass); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border); z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%;
         }
-
-        .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px;}
+        .logo { font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-main); }
         .logo-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
-        
         .nav-links { display: flex; gap: 2rem; align-items: center; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--text-main); }
-
-        /* Buttons */
-        .btn {
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s;
-            border: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
         
-        .btn-primary {
-            background: var(--text-main);
-            color: var(--bg-dark);
-        }
-        .btn-primary:hover { background: #d1d1d1; transform: translateY(-1px); }
-        
-        .btn-outline {
-            background: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--border);
-        }
-        .btn-outline:hover { border-color: var(--text-muted); background: rgba(255,255,255,0.02); }
+        .btn { padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.2s; display: inline-block; }
+        .btn-primary { background: var(--text-main); color: var(--bg-dark); }
+        .btn-primary:hover { background: #d1d1d1; }
+        .btn-outline { background: transparent; color: var(--text-main); border: 1px solid var(--border); }
+        .btn-outline:hover { border-color: var(--text-muted); }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 6rem 5% 2rem;
-            position: relative;
-        }
+        .hero { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 8rem 5% 4rem; max-width: 900px; margin: 0 auto; }
+        .badge { background: rgba(0, 255, 136, 0.1); color: var(--accent); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; border: 1px solid rgba(0, 255, 136, 0.2); margin-bottom: 2rem; font-family: 'JetBrains Mono', monospace; }
+        h1 { font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 1.5rem; }
+        .text-gradient { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p.hero-desc { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+        .hero-actions { display: flex; gap: 1rem; }
 
-        .hero::before {
-            content: ''; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%);
-            width: 600px; height: 600px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-            z-index: -1; pointer-events: none;
-        }
+        .features-grid { max-width: 1200px; margin: 0 auto 6rem; padding: 0 5%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s; }
+        .card:hover { border-color: #333; }
+        .card h3 { font-size: 1.2rem; margin-bottom: 1rem; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        .badge {
-            background: rgba(0, 255, 136, 0.1);
-            color: var(--accent);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border: 1px solid rgba(0, 255, 136, 0.2);
-            margin-bottom: 2rem;
-        }
-
-        .hero h1 { font-size: clamp(3rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -0.04em; margin-bottom: 1.5rem; }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 650px; margin-bottom: 2.5rem; }
-        .hero-btns { display: flex; gap: 1rem; }
-
-        /* Grid Sections */
-        .container { max-width: 1200px; margin: 0 auto; padding: 6rem 5%; }
-        
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-        
-        .label { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--accent); margin-bottom: 1rem; display: block; }
-        h2 { font-size: 2.5rem; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
-        p.lead { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 1.5rem; }
-
-        /* Metrics Dashboard Component */
-        .metrics-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-
-        .metric-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 1.2rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-        .metric-row:last-child { border-bottom: none; padding-bottom: 0; }
-        .metric-label { color: var(--text-muted); font-size: 0.95rem; }
-        .metric-value { font-weight: 600; font-family: 'JetBrains Mono', monospace; }
-
-        /* Modals */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
-            display: flex; justify-content: center; align-items: center;
-            z-index: 2000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
-        }
-        .modal-overlay.active { opacity: 1; pointer-events: all; }
-        
-        .modal-content {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            width: 100%; max-width: 500px;
-            padding: 2.5rem;
-            transform: translateY(20px); transition: transform 0.3s ease;
-            position: relative;
-        }
-        .modal-overlay.active .modal-content { transform: translateY(0); }
-        
-        .modal-close {
-            position: absolute; top: 1.5rem; right: 1.5rem;
-            background: transparent; border: none; color: var(--text-muted);
-            font-size: 1.5rem; cursor: pointer;
-        }
-        .modal-close:hover { color: var(--text-main); }
-
-        /* Form Styles */
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-muted); }
-        .form-control {
-            width: 100%; padding: 0.8rem 1rem;
-            background: var(--bg-dark); border: 1px solid var(--border);
-            border-radius: 6px; color: var(--text-main); font-family: inherit;
-            transition: border-color 0.2s;
-        }
-        .form-control:focus { outline: none; border-color: var(--accent); }
-        textarea.form-control { resize: vertical; min-height: 100px; }
-
-        #deck-modal .modal-content { max-width: 900px; height: 80vh; padding: 1rem; display: flex; flex-direction: column; }
-        #deck-frame { flex-grow: 1; width: 100%; border: none; border-radius: 8px; background: #fff; }
-
+        footer { text-align: center; padding: 3rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
+        @media(max-width: 768px) { .features-grid { grid-template-columns: 1fr; } .hero-actions { flex-direction: column; } }
     </style>
 </head>
 <body>
-
     <nav>
-        <div class="logo"><div class="logo-dot"></div> Proof of Intelligence</div>
+        <a href="index.html" class="logo"><div class="logo-dot"></div> Proof of Intelligence</a>
         <div class="nav-links">
-            <a href="#infrastructure">Infrastructure</a>
-            <a href="#traction">Traction</a>
-            <button class="btn btn-outline" onclick="openModal('deck-modal')">Pitch Deck</button>
-            <button class="btn btn-primary" onclick="openModal('demo-modal')">Request Demo</button>
+            <a href="index.html" class="active">Overview</a>
+            <a href="technology.html">Technology</a>
+            <a href="traction.html">Traction & Model</a>
+            <a href="contact.html" class="btn btn-primary">Request Demo</a>
         </div>
     </nav>
 
     <section class="hero">
-        <div class="badge font-mono">PRE-SEED OPPORTUNITY</div>
-        <h1>The <span class="text-gradient">Identity Layer</span><br>For a Post-AI World.</h1>
-        <p>Generative AI rendered static resumes and take-home tests obsolete. We built a unified B2B talent network that replaces self-reported trust with real-time, tamper-evident execution ledgers.</p>
-        <div class="hero-btns">
-            <button class="btn btn-primary" style="padding: 1rem 2rem;" onclick="openModal('demo-modal')">Request Investor Demo</button>
-            <button class="btn btn-outline" style="padding: 1rem 2rem;" onclick="openModal('deck-modal')">View Pitch Deck</button>
+        <div class="badge">Pre-Seed Investor Overview</div>
+        <h1>The Professional Identity Layer<br><span class="text-gradient">For a Post-AI World.</span></h1>
+        <p class="hero-desc">Generative AI broke traditional hiring. Resumes are fabricated; static tests are automated. Proof of Intelligence replaces self-reported trust with real-time execution ledgers.</p>
+        <div class="hero-actions">
+            <a href="contact.html" class="btn btn-primary" style="padding: 0.9rem 2rem;">Request Founder Demo</a>
+            <a href="technology.html" class="btn btn-outline" style="padding: 0.9rem 2rem;">Explore Architecture</a>
         </div>
     </section>
 
-    <section id="infrastructure" class="container">
-        <div class="grid-2">
-            <div>
-                <span class="label">// 01. CORE INFRASTRUCTURE</span>
-                <h2>We are not an AI wrapper.</h2>
-                <p class="lead">Built for extreme concurrency, our live evaluation mesh is engineered from the bare-metal up.</p>
-                <p style="color: var(--text-muted);">Powered by sub-millisecond WebSockets, low-latency WebRTC video relays, and deeply isolated container sandboxes. We capture the exact keystroke-by-keystroke trace of a candidate's logic, creating an undeniable cryptographic proof of capability.</p>
-            </div>
-            <div class="metrics-card font-mono" style="background: #000; border-color: #222;">
-                <div style="color: #888; margin-bottom: 1rem; font-size: 0.8rem;">$ systemctl status poi-media-mesh</div>
-                <div style="color: var(--accent);">● active (running)</div>
-                <br>
-                <div style="color: #666;">LATENCY   : <span style="color: #ddd;">< 50ms global ping</span></div>
-                <div style="color: #666;">SANDBOX   : <span style="color: #ddd;">gVisor isolated runtime</span></div>
-                <div style="color: #666;">STREAMING : <span style="color: #ddd;">WebRTC SFU Architecture</span></div>
-                <div style="color: #666;">EFFICIENCY: <span style="color: #ddd;">8x Server Cost Optimization</span></div>
-            </div>
+    <section class="features-grid">
+        <div class="card">
+            <h3>Hardcore Infrastructure</h3>
+            <p>Not an AI wrapper. Built with sub-millisecond WebSockets, WebRTC video mesh, and gVisor container sandboxes for live testing.</p>
+        </div>
+        <div class="card">
+            <h3>Zero-CAC PLG Flywheel</h3>
+            <p>Candidates share verified execution profiles instead of static PDF resumes, pulling hiring managers into inbound B2B sales loops.</p>
+        </div>
+        <div class="card">
+            <h3>Capital Efficiency</h3>
+            <p>Engineered out of Lahore, Pakistan. A $150k pre-seed check yields 18 months of runway and a top-tier 5-person engineering team.</p>
         </div>
     </section>
 
-    <section id="traction" class="container">
-        <div class="grid-2">
-            <div class="metrics-card">
-                <div class="metric-row">
-                    <span class="metric-label">Target Raise</span>
-                    <span class="metric-value text-gradient">$100k - $150k Pre-Seed</span>
-                </div>
-                <div class="metric-row">
-                    <span class="metric-label">Current MRR Goal</span>
-                    <span class="metric-value">$5,000 (Private Pilots)</span>
-                </div>
-                <div class="metric-row">
-                    <span class="metric-label">Financial Runway</span>
-                    <span class="metric-value">18 Months</span>
-                </div>
-                <div class="metric-row">
-                    <span class="metric-label">Engineering Team</span>
-                    <span class="metric-value">1 (Founder)</span>
-                </div>
-                <div class="metric-row">
-                    <span class="metric-label">Next Milestone</span>
-                    <span class="metric-value">SOC 2 Type I Audit</span>
-                </div>
-            </div>
-            <div>
-                <span class="label">// 02. BUSINESS MODEL</span>
-                <h2>Zero-CAC Flywheel</h2>
-                <p class="lead">We monetize enterprise B2B demand while the supply side grows for free.</p>
-                <p style="color: var(--text-muted);">Our Product-Led Growth (PLG) motion is a Trojan Horse. Candidates replace their static PDF resumes with our verified execution ledger links. When they apply to jobs externally, the hiring manager clicks the link and is organically pulled into our ecosystem as a qualified inbound B2B lead.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Demo Request Modal (Connects to Email via Formspree) -->
-    <div class="modal-overlay" id="demo-modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('demo-modal')">&times;</button>
-            <h3 style="margin-bottom: 0.5rem; font-size: 1.5rem;">Connect with the Founder</h3>
-            <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.9rem;">Fill out this form to request access to the live platform demo or schedule a founder call.</p>
-            
-            <!-- Replace 'YOUR_FORMSPREE_ID' with your actual endpoint in Step 2 -->
-            <form action="https://formspree.io/f/mljdgywk" method="POST">
-                <div class="form-group">
-                    <label>Name / Firm</label>
-                    <input type="text" name="name" class="form-control" required placeholder="e.g. Jane Doe, Y Combinator">
-                </div>
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" name="email" class="form-control" required placeholder="jane@vc.com">
-                </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="message" class="form-control" required placeholder="I'd like to see a demo of the Logic Rooms..."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.8rem;">Send Request</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Pitch Deck Modal -->
-    <div class="modal-overlay" id="deck-modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('deck-modal')" style="top: -2rem; right: 0; color: white;">&times;</button>
-            <!-- Replace the src with your actual PDF embed link in Step 3 -->
-            <iframe id="deck-frame" src="pitchdeck.pdf" type="application/pdf" width="100%" height="100%" style="border: none; border-radius: 8px;"></iframe>
-        </div>
-    </div>
-
-    <script>
-        // Modal Logic
-        function openModal(id) {
-            document.getElementById(id).classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling in background
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside the box
-        document.querySelectorAll('.modal-overlay').forEach(overlay => {
-            overlay.addEventListener('click', function(e) {
-                if (e.target === this) closeModal(this.id);
-            });
-        });
-    </script>
+    <footer>
+        <p>&copy; 2026 Proof of Intelligence. Built for high-velocity technical execution.</p>
+    </footer>
 </body>
 </html>

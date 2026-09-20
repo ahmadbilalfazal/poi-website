@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology | Proof of Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #050505; --bg-card: #0a0a0a; --bg-glass: rgba(10, 10, 10, 0.8);
+            --border: #1f1f1f; --text-main: #f5f5f5; --text-muted: #888; --accent: #00ff88;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; }
+        
+        nav {
+            position: fixed; top: 0; width: 100%; background: var(--bg-glass); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border); z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%;
+        }
+        .logo { font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-main); }
+        .logo-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
+        .btn { padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: 500; text-decoration: none; }
+        .btn-primary { background: var(--text-main); color: var(--bg-dark); }
+
+        .content { max-width: 900px; margin: 0 auto; padding: 10rem 5% 5rem; }
+        h1 { font-size: 3rem; margin-bottom: 1rem; letter-spacing: -0.03em; }
+        .subtitle { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 3rem; }
+        
+        .tech-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; margin-bottom: 2rem; }
+        .tech-block h2 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent); font-family: 'JetBrains Mono', monospace; }
+        .tech-block p { color: var(--text-muted); margin-bottom: 1rem; }
+        
+        footer { text-align: center; padding: 3rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo"><div class="logo-dot"></div> Proof of Intelligence</a>
+        <div class="nav-links">
+            <a href="index.html">Overview</a>
+            <a href="technology.html" class="active">Technology</a>
+            <a href="traction.html">Traction & Model</a>
+            <a href="contact.html" class="btn btn-primary">Request Demo</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>System Architecture</h1>
+        <p class="subtitle">Deep-dive into the low-latency infrastructure powering our real-time Logic Rooms.</p>
+
+        <div class="tech-block">
+            <h2>01 / Synchronized WebRTC Media Mesh</h2>
+            <p>Traditional interview tools rely on sluggish, high-latency third-party wrappers. We engineered a custom WebRTC selective forwarding unit (SFU) mesh to handle multi-party video, audio, and state synchronization across participants with sub-50ms latency.</p>
+        </div>
+
+        <div class="tech-block">
+            <h2>02 / gVisor Isolated Execution Sandboxes</h2>
+            <p>Every line of code executed during an evaluation runs inside a secure, containerized sandbox using gVisor isolation kernels. This prevents container breakout risks while executing multi-language runtimes (Python, TypeScript, Rust) instantly.</p>
+        </div>
+
+        <div class="tech-block">
+            <h2>03 / Tamper-Evident Evidence Ledgers</h2>
+            <p>Every keystroke, execution output, and whiteboard stroke is cryptographically timestamped and serialized into an immutable ledger, preventing post-session tampering and providing recruiters with replayable proof.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Proof of Intelligence. Infrastructure-first talent verification.</p>
+    </footer>
+</body>
+</html>
