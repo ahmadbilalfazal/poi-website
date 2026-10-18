@@ -1,0 +1,29 @@
+{
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/technology.html", "destination": "/product", "permanent": true },
+    { "source": "/pitchdeck.html", "destination": "/investor-deck", "permanent": true },
+    { "source": "/traction.html", "destination": "/company", "permanent": true },
+    { "source": "/contact.html", "destination": "/demo", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/product", "destination": "/technology.html" },
+    { "source": "/investor-deck", "destination": "/pitchdeck.html" },
+    { "source": "/company", "destination": "/traction.html" },
+    { "source": "/demo", "destination": "/contact.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self' https://formspree.io; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; upgrade-insecure-requests" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    }
+  ]
+}

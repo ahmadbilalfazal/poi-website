@@ -571,3 +571,5 @@ textarea.form-control { min-height: 120px; resize: vertical; }
     .deck-stage-column h3 { font-size: 21px; }
     .deck-note { margin: -4px auto 35px; }
 }
+.text-acid { color: var(--acid); }
+.deck-stage-note { margin-top: 14px; }
