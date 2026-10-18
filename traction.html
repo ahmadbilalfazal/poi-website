@@ -3,84 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traction & Model | Proof of Intelligence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #050505; --bg-card: #0a0a0a; --bg-glass: rgba(10, 10, 10, 0.8);
-            --border: #1f1f1f; --text-main: #f5f5f5; --text-muted: #888; --accent: #00ff88;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; }
-        
-        nav {
-            position: fixed; top: 0; width: 100%; background: var(--bg-glass); backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border); z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%;
-        }
-        .logo { font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-main); }
-        .logo-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
-        .nav-links { display: flex; gap: 2rem; align-items: center; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
-        .btn { padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: 500; text-decoration: none; }
-        .btn-primary { background: var(--text-main); color: var(--bg-dark); }
-
-        .content { max-width: 900px; margin: 0 auto; padding: 10rem 5% 5rem; }
-        h1 { font-size: 3rem; margin-bottom: 1rem; letter-spacing: -0.03em; }
-        .subtitle { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 3rem; }
-        
-        .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem; }
-        .metric-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
-        .metric-title { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; }
-        .metric-val { font-size: 2rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: var(--accent); }
-
-        footer { text-align: center; padding: 3rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
-        @media(max-width: 768px) { .metrics-grid { grid-template-columns: 1fr; } }
-    </style>
+    <meta name="description" content="Proof of Intelligence company overview: product stage, business model direction, and current validation priorities.">
+    <meta name="theme-color" content="#f5f6f2">
+    <link rel="stylesheet" href="styles.css">
+    <title>Company | Proof</title>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo"><div class="logo-dot"></div> Proof of Intelligence</a>
-        <div class="nav-links">
-            <a href="index.html">Overview</a>
-            <a href="technology.html">Technology</a>
-            <a href="traction.html" class="active">Traction & Model</a>
-            <a href="contact.html" class="btn btn-primary">Request Demo</a>
+    <header class="site-header">
+        <div class="nav-shell">
+            <a class="brand" href="index.html" aria-label="Proof home"><span class="brand-mark">P</span>proof</a>
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <a href="index.html">Overview</a><a href="technology.html">Product</a><a class="active" href="traction.html">Company</a><a class="nav-cta" href="contact.html">Request a demo <span class="button-arrow" aria-hidden="true">↗</span></a>
+            </nav>
+            <details class="mobile-menu">
+                <summary aria-label="Open navigation menu"><span class="menu-line"></span><span class="menu-line"></span></summary>
+                <nav class="mobile-nav" aria-label="Mobile navigation"><a href="index.html">Overview</a><a href="technology.html">Product</a><a href="traction.html">Company</a><a href="contact.html">Request a demo ↗</a></nav>
+            </details>
         </div>
-    </nav>
-
-    <div class="content">
-        <h1>Traction & Economics</h1>
-        <p class="subtitle">Capital allocation, unit economics, and private pilot validation.</p>
-
-        <div class="metrics-grid">
-            <div class="metric-box">
-                <div class="metric-title">TARGET PRE-SEED RAISE</div>
-                <div class="metric-val">$100k - $150k</div>
+    </header>
+    <main>
+        <section class="page-intro">
+            <span class="eyebrow">Company overview</span>
+            <h1>Build trust through work people can review.</h1>
+            <p>Proof is developing a professional network and hiring workflow around demonstrated collaboration. The product is built; the next job is proving repeat use, buyer demand, and a deployable operating model.</p>
+        </section>
+        <section class="content-section">
+            <span class="section-tag">Business model direction</span>
+            <h2>Start where evidence changes a hiring decision.</h2>
+            <div class="model-grid">
+                <article class="model-block"><span class="overline">For teams</span><h3>Hiring and assessment workflows</h3><p>Company workspaces already support jobs, candidate pipelines, profile search and comparison, and structured assessments. A paid team workspace is the clearest monetization direction to validate with recruiters and employers.</p></article>
+                <article class="model-block"><span class="overline">For professionals</span><h3>A portable record of work</h3><p>Profiles and session reports give professionals a reason to participate and share their work. That network effect is a hypothesis to test, not a proven acquisition-cost advantage.</p></article>
             </div>
-            <div class="metric-box">
-                <div class="metric-title">FINANCIAL RUNWAY</div>
-                <div class="metric-val">18 Months</div>
+        </section>
+        <section class="content-section">
+            <span class="section-tag">Current stage</span>
+            <h2>Working product. Commercial proof still ahead.</h2>
+            <div class="stage-row">
+                <article class="stage-cell"><span class="overline">In the repository</span><h3>End-to-end product surface</h3><p>Profiles, live rooms, session reports, professional networking, jobs, company tools, and an investor demo dataset are implemented in the all-in-one source release.</p></article>
+                <article class="stage-cell"><span class="overline">To validate next</span><h3>Use, conversion, and deployment</h3><p>Repeat engagement, willingness to pay, customer acquisition, production readiness, and operating costs need real-world validation before they can be represented as traction.</p></article>
             </div>
-            <div class="metric-box">
-                <div class="metric-title">INITIAL MRR GOAL</div>
-                <div class="metric-val">$5,000</div>
-            </div>
-            <div class="metric-box">
-                <div class="metric-title">TEAM CAPACITY</div>
-                <div class="metric-val">1 (Founder)</div>
-            </div>
-        </div>
-
-        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem;">
-            <h3 style="margin-bottom: 1rem; font-size: 1.3rem;">The Go-To-Market Flywheel</h3>
-            <p style="color: var(--text-muted); margin-bottom: 1rem;">We operate a classic B2B SaaS licensing model for enterprise teams and recruitment agencies. However, our acquisition cost is effectively zero due to our Product-Led Growth motion.</p>
-            <p style="color: var(--text-muted);">Engineers build their profiles and share their tamper-evident execution ledgers externally in place of resumes. Every shared profile acts as a organic acquisition vector, bringing hiring managers directly to our ecosystem.</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Proof of Intelligence. Built for scale.</p>
-    </footer>
+            <p class="metric-disclaimer">No revenue, customer, pilot, or growth metrics are presented here because none are substantiated in the source materials reviewed.</p>
+        </section>
+        <section class="content-section">
+            <span class="section-tag">Execution priorities</span>
+            <h2>Turn a broad product into a focused operating business.</h2>
+            <ul class="roadmap-list">
+                <li>Run focused sessions with hiring teams and professionals; measure whether session evidence changes evaluation decisions.</li>
+                <li>Validate a narrow initial customer and workflow before expanding the product surface.</li>
+                <li>Harden hosting, media, code execution, identity, billing, and email for a public service.</li>
+                <li>Establish baseline product, retention, conversion, and cost metrics before making scale claims.</li>
+            </ul>
+        </section>
+        <section class="cta-band"><div class="cta-inner"><h2>Discuss the product, current stage, and what needs to be proven next.</h2><a class="button" href="contact.html">Talk with the founder <span class="button-arrow" aria-hidden="true">↗</span></a></div></section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner"><a class="brand" href="index.html"><span class="brand-mark">P</span>proof</a><span class="footer-copy">Proof of Intelligence · 2026</span><nav class="footer-links" aria-label="Footer navigation"><a href="index.html">Overview</a><a href="technology.html">Product</a><a href="contact.html">Contact</a></nav></div></footer>
 </body>
 </html>

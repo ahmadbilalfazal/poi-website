@@ -3,72 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technology | Proof of Intelligence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #050505; --bg-card: #0a0a0a; --bg-glass: rgba(10, 10, 10, 0.8);
-            --border: #1f1f1f; --text-main: #f5f5f5; --text-muted: #888; --accent: #00ff88;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; }
-        
-        nav {
-            position: fixed; top: 0; width: 100%; background: var(--bg-glass); backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border); z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%;
-        }
-        .logo { font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-main); }
-        .logo-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
-        .nav-links { display: flex; gap: 2rem; align-items: center; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
-        .btn { padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: 500; text-decoration: none; }
-        .btn-primary { background: var(--text-main); color: var(--bg-dark); }
-
-        .content { max-width: 900px; margin: 0 auto; padding: 10rem 5% 5rem; }
-        h1 { font-size: 3rem; margin-bottom: 1rem; letter-spacing: -0.03em; }
-        .subtitle { color: var(--text-muted); font-size: 1.2rem; margin-bottom: 3rem; }
-        
-        .tech-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem; margin-bottom: 2rem; }
-        .tech-block h2 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent); font-family: 'JetBrains Mono', monospace; }
-        .tech-block p { color: var(--text-muted); margin-bottom: 1rem; }
-        
-        footer { text-align: center; padding: 3rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
-    </style>
+    <meta name="description" content="Explore the Proof product: collaborative rooms, session evidence, professional profiles, and team discovery.">
+    <meta name="theme-color" content="#f5f6f2">
+    <link rel="stylesheet" href="styles.css">
+    <title>Product | Proof</title>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo"><div class="logo-dot"></div> Proof of Intelligence</a>
-        <div class="nav-links">
-            <a href="index.html">Overview</a>
-            <a href="technology.html" class="active">Technology</a>
-            <a href="traction.html">Traction & Model</a>
-            <a href="contact.html" class="btn btn-primary">Request Demo</a>
+    <header class="site-header">
+        <div class="nav-shell">
+            <a class="brand" href="index.html" aria-label="Proof home"><span class="brand-mark">P</span>proof</a>
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <a href="index.html">Overview</a><a class="active" href="technology.html">Product</a><a href="traction.html">Company</a><a class="nav-cta" href="contact.html">Request a demo <span class="button-arrow" aria-hidden="true">↗</span></a>
+            </nav>
+            <details class="mobile-menu">
+                <summary aria-label="Open navigation menu"><span class="menu-line"></span><span class="menu-line"></span></summary>
+                <nav class="mobile-nav" aria-label="Mobile navigation"><a href="index.html">Overview</a><a href="technology.html">Product</a><a href="traction.html">Company</a><a href="contact.html">Request a demo ↗</a></nav>
+            </details>
         </div>
-    </nav>
-
-    <div class="content">
-        <h1>System Architecture</h1>
-        <p class="subtitle">Deep-dive into the low-latency infrastructure powering our real-time Logic Rooms.</p>
-
-        <div class="tech-block">
-            <h2>01 / Synchronized WebRTC Media Mesh</h2>
-            <p>Traditional interview tools rely on sluggish, high-latency third-party wrappers. We engineered a custom WebRTC selective forwarding unit (SFU) mesh to handle multi-party video, audio, and state synchronization across participants with sub-50ms latency.</p>
-        </div>
-
-        <div class="tech-block">
-            <h2>02 / gVisor Isolated Execution Sandboxes</h2>
-            <p>Every line of code executed during an evaluation runs inside a secure, containerized sandbox using gVisor isolation kernels. This prevents container breakout risks while executing multi-language runtimes (Python, TypeScript, Rust) instantly.</p>
-        </div>
-
-        <div class="tech-block">
-            <h2>03 / Tamper-Evident Evidence Ledgers</h2>
-            <p>Every keystroke, execution output, and whiteboard stroke is cryptographically timestamped and serialized into an immutable ledger, preventing post-session tampering and providing recruiters with replayable proof.</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Proof of Intelligence. Infrastructure-first talent verification.</p>
-    </footer>
+    </header>
+    <main>
+        <section class="page-intro">
+            <span class="eyebrow">The product</span>
+            <h1>Evidence that travels with the work.</h1>
+            <p>Proof connects collaborative sessions to professional profiles and hiring workflows, giving people more context than a resume or a one-off interview can provide.</p>
+        </section>
+        <section class="content-section">
+            <span class="section-tag">Product loop</span>
+            <h2>One connected workflow, from room to reputation.</h2>
+            <div class="architecture-list">
+                <article class="architecture-row"><span class="index">01</span><h3>Collaborative rooms</h3><p>People work together in configurable sessions for software engineering, data analysis, design reviews, business cases, research, and other structured work. Room tools include video, chat, notes, whiteboards, and code.</p></article>
+                <article class="architecture-row"><span class="index">02</span><h3>Session evidence</h3><p>Room activity is recorded as ordered events. After a session, an analysis worker produces a report with observed strengths, improvement areas, suggestions, and performance metrics; AI analysis can fall back to deterministic evidence scoring.</p></article>
+                <article class="architecture-row"><span class="index">03</span><h3>Professional profiles</h3><p>Profiles combine experience, education, projects, skills, credentials, completed session reports, and performance history. People can build a more inspectable record of their work over time.</p></article>
+                <article class="architecture-row"><span class="index">04</span><h3>Team discovery</h3><p>Hiring teams can search profiles, review work history, compare candidates, publish jobs, manage applications, and invite candidates to structured Proof Sessions.</p></article>
+            </div>
+        </section>
+        <section class="content-section">
+            <span class="section-tag">System architecture</span>
+            <h2>A full-stack application built around a shared evidence model.</h2>
+            <p>The source release includes the web application, real-time API, asynchronous analysis, data services, and a code-execution service. The components are designed to run together as a local Docker Compose environment.</p>
+            <div class="stack-line" aria-label="Technology components"><span>Next.js / React</span><span>Express / Socket.IO</span><span>PostgreSQL</span><span>Redis / BullMQ</span><span>MinIO</span><span>Docker code sandbox</span></div>
+            <aside class="note-band"><strong>Where the product stands</strong><p>The repository provides a runnable local release. It does not claim production-scale operation: public deployment still requires managed infrastructure, production media routing, hardened execution, billing and email integrations, security and compliance review, and load testing.</p></aside>
+        </section>
+        <section class="cta-band"><div class="cta-inner"><h2>Walk through the live product and the choices behind the architecture.</h2><a class="button" href="contact.html">Request a product demo <span class="button-arrow" aria-hidden="true">↗</span></a></div></section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner"><a class="brand" href="index.html"><span class="brand-mark">P</span>proof</a><span class="footer-copy">Proof of Intelligence · 2026</span><nav class="footer-links" aria-label="Footer navigation"><a href="index.html">Overview</a><a href="traction.html">Company</a><a href="contact.html">Contact</a></nav></div></footer>
 </body>
 </html>

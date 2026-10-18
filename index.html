@@ -3,93 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proof of Intelligence | Investor Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-dark: #050505;
-            --bg-card: #0a0a0a;
-            --bg-glass: rgba(10, 10, 10, 0.8);
-            --border: #1f1f1f;
-            --text-main: #f5f5f5;
-            --text-muted: #888;
-            --accent: #00ff88;
-            --gradient: linear-gradient(135deg, #00ff88 0%, #00aaff 100%);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Inter', sans-serif; line-height: 1.6; }
-        
-        nav {
-            position: fixed; top: 0; width: 100%; background: var(--bg-glass); backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border); z-index: 1000; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 5%;
-        }
-        .logo { font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-main); }
-        .logo-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
-        .nav-links { display: flex; gap: 2rem; align-items: center; }
-        .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
-        .nav-links a:hover, .nav-links a.active { color: var(--text-main); }
-        
-        .btn { padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.2s; display: inline-block; }
-        .btn-primary { background: var(--text-main); color: var(--bg-dark); }
-        .btn-primary:hover { background: #d1d1d1; }
-        .btn-outline { background: transparent; color: var(--text-main); border: 1px solid var(--border); }
-        .btn-outline:hover { border-color: var(--text-muted); }
-
-        .hero { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 8rem 5% 4rem; max-width: 900px; margin: 0 auto; }
-        .badge { background: rgba(0, 255, 136, 0.1); color: var(--accent); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; border: 1px solid rgba(0, 255, 136, 0.2); margin-bottom: 2rem; font-family: 'JetBrains Mono', monospace; }
-        h1 { font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1; letter-spacing: -0.04em; margin-bottom: 1.5rem; }
-        .text-gradient { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        p.hero-desc { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2.5rem; }
-        .hero-actions { display: flex; gap: 1rem; }
-
-        .features-grid { max-width: 1200px; margin: 0 auto 6rem; padding: 0 5%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; transition: border-color 0.2s; }
-        .card:hover { border-color: #333; }
-        .card h3 { font-size: 1.2rem; margin-bottom: 1rem; }
-        .card p { color: var(--text-muted); font-size: 0.95rem; }
-
-        footer { text-align: center; padding: 3rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem; }
-        @media(max-width: 768px) { .features-grid { grid-template-columns: 1fr; } .hero-actions { flex-direction: column; } }
-    </style>
+    <meta name="description" content="Proof turns shared work into a professional reputation people can inspect. Explore live collaboration, session evidence, and team discovery.">
+    <meta name="theme-color" content="#f5f6f2">
+    <link rel="stylesheet" href="styles.css">
+    <title>Proof | Professional reputation, backed by work</title>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo"><div class="logo-dot"></div> Proof of Intelligence</a>
-        <div class="nav-links">
-            <a href="index.html" class="active">Overview</a>
-            <a href="technology.html">Technology</a>
-            <a href="traction.html">Traction & Model</a>
-            <a href="contact.html" class="btn btn-primary">Request Demo</a>
+    <header class="site-header">
+        <div class="nav-shell">
+            <a class="brand" href="index.html" aria-label="Proof home"><span class="brand-mark">P</span>proof</a>
+            <nav class="desktop-nav" aria-label="Main navigation">
+                <a class="active" href="index.html">Overview</a><a href="technology.html">Product</a><a href="traction.html">Company</a><a class="nav-cta" href="contact.html">Request a demo <span class="button-arrow" aria-hidden="true">↗</span></a>
+            </nav>
+            <details class="mobile-menu">
+                <summary aria-label="Open navigation menu"><span class="menu-line"></span><span class="menu-line"></span></summary>
+                <nav class="mobile-nav" aria-label="Mobile navigation"><a href="index.html">Overview</a><a href="technology.html">Product</a><a href="traction.html">Company</a><a href="contact.html">Request a demo ↗</a></nav>
+            </details>
         </div>
-    </nav>
+    </header>
 
-    <section class="hero">
-        <div class="badge">Pre-Seed Investor Overview</div>
-        <h1>The Professional Identity Layer<br><span class="text-gradient">For a Post-AI World.</span></h1>
-        <p class="hero-desc">Generative AI broke traditional hiring. Resumes are fabricated; static tests are automated. Proof of Intelligence replaces self-reported trust with real-time execution ledgers.</p>
-        <div class="hero-actions">
-            <a href="contact.html" class="btn btn-primary" style="padding: 0.9rem 2rem;">Request Founder Demo</a>
-            <a href="technology.html" class="btn btn-outline" style="padding: 0.9rem 2rem;">Explore Architecture</a>
-        </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-copy">
+                <span class="eyebrow">Professional identity, backed by work</span>
+                <h1>Make professional reputation <em>inspectable.</em></h1>
+                <p>Proof is a professional network where collaboration, completed work, and performance history become part of your profile, not just the claims you type into it.</p>
+                <div class="hero-actions"><a class="button button-light" href="technology.html">See the product <span class="button-arrow" aria-hidden="true">↗</span></a><a class="button button-outline" href="pitchdeck.pdf" target="_blank" rel="noopener">Read the investor deck</a></div>
+                <p class="hero-footnote">Built for professionals and the teams looking for them.</p>
+            </div>
+            <div class="product-stage" aria-label="Illustrative Proof profile and session evidence interface">
+                <div class="product-window">
+                    <div class="window-top"><span>proof / professional profile</span><span class="window-status">Evidence attached</span></div>
+                    <div class="window-content">
+                        <div class="profile-preview">
+                            <div class="profile-monogram">MC</div>
+                            <div><h3>Maya Chen</h3><p>AI systems engineer</p></div>
+                            <div class="score-row"><span>Problem solving</span><b>96</b></div>
+                            <div class="score-row"><span>Communication</span><b>91</b></div>
+                            <div class="score-row"><span>Adaptability</span><b>94</b></div>
+                        </div>
+                        <div class="evidence-preview">
+                            <h3>Session evidence</h3>
+                            <div class="evidence-item"><strong>Reliability review</strong>Reframed the failure around observability.</div>
+                            <div class="evidence-item"><strong>Collaborative work</strong>Shared decisions, code changes, and review.</div>
+                            <div class="evidence-item"><strong>Analysis complete</strong>Feedback linked to the session record.</div>
+                            <span class="sample-label">Illustrative demo data</span>
+                        </div>
+                    </div>
+                </div>
+                <span class="stage-caption">Profile + evidence · product preview</span>
+            </div>
+        </section>
 
-    <section class="features-grid">
-        <div class="card">
-            <h3>Hardcore Infrastructure</h3>
-            <p>Not an AI wrapper. Built with sub-millisecond WebSockets, WebRTC video mesh, and gVisor container sandboxes for live testing.</p>
-        </div>
-        <div class="card">
-            <h3>Zero-CAC PLG Flywheel</h3>
-            <p>Candidates share verified execution profiles instead of static PDF resumes, pulling hiring managers into inbound B2B sales loops.</p>
-        </div>
-        <div class="card">
-            <h3>Capital Efficiency</h3>
-            <p>Engineered out of Lahore, Pakistan. A $150k pre-seed check yields 18 months of runway and a top-tier 5-person engineering team.</p>
-        </div>
-    </section>
+        <section class="signal-strip" aria-label="Product principles">
+            <div class="signal-inner"><span class="signal-intro">A different kind of signal</span><div class="signal-item"><span class="signal-number">01</span>Work together live</div><div class="signal-item"><span class="signal-number">02</span>Keep a record of the work</div><div class="signal-item"><span class="signal-number">03</span>Carry proof forward</div></div>
+        </section>
 
-    <footer>
-        <p>&copy; 2026 Proof of Intelligence. Built for high-velocity technical execution.</p>
-    </footer>
+        <section class="section-wrap">
+            <div class="section-heading"><span class="section-tag">How Proof works</span><h2>From a working session to a living professional record.</h2><p>Proof connects the work people do together with the reputation they build over time.</p></div>
+            <div class="steps-grid">
+                <article class="step"><span class="step-number">01 / COLLABORATE</span><h3>Work in a shared room</h3><p>Bring people together for code, design, research, business cases, or structured interviews.</p></article>
+                <article class="step"><span class="step-number">02 / CAPTURE</span><h3>Keep the working context</h3><p>Session events and outcomes inform a report, so the reasoning behind the result is easier to review.</p></article>
+                <article class="step"><span class="step-number">03 / BUILD</span><h3>Make progress visible</h3><p>Profiles bring together work history, skills, session reports, and professional connections.</p></article>
+            </div>
+        </section>
+
+        <section class="audience-section">
+            <div class="section-wrap audience-grid">
+                <div class="audience-copy"><span class="section-tag">One network, two sides</span><h2>Better context for people and the teams that find them.</h2><p>Professionals can build a profile around more than a resume. Hiring teams can search profiles, review evidence, compare candidates, and invite people to structured sessions.</p><a class="deck-link" href="technology.html">Explore the product <span aria-hidden="true">→</span></a></div>
+                <div class="feature-list">
+                    <div class="feature-row"><span class="feature-icon">P</span><div><strong>Professional profiles</strong><span>Experience, projects, credentials, skills, and session reports in one place.</span></div></div>
+                    <div class="feature-row"><span class="feature-icon">R</span><div><strong>Live Proof Rooms</strong><span>Video, chat, notes, whiteboards, and code in a shared workspace.</span></div></div>
+                    <div class="feature-row"><span class="feature-icon">T</span><div><strong>Team workflows</strong><span>Talent search, candidate comparison, jobs, and structured assessments.</span></div></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-band"><div class="cta-inner"><h2>See how the product turns shared work into a professional record.</h2><a class="button" href="contact.html">Request an investor demo <span class="button-arrow" aria-hidden="true">↗</span></a></div></section>
+    </main>
+    <footer class="site-footer"><div class="footer-inner"><a class="brand" href="index.html"><span class="brand-mark">P</span>proof</a><span class="footer-copy">Proof of Intelligence · 2026</span><nav class="footer-links" aria-label="Footer navigation"><a href="technology.html">Product</a><a href="traction.html">Company</a><a href="contact.html">Contact</a></nav></div></footer>
 </body>
 </html>
